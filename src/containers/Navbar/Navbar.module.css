@@ -1,0 +1,6 @@
+.root {
+    width: var(--navbar-width);
+    height: 100%;
+    background-color: aquamarine;
+    position: fixed;
+}

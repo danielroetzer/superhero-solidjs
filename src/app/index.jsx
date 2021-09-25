@@ -5,6 +5,8 @@
 
 
 import Router from '@/containers/Router';
+import Navbar from '@/containers/Navbar';
+import css from './app.module.css';
 
 
 /** HELPERS **/
@@ -15,10 +17,12 @@ import Router from '@/containers/Router';
 
 function App() {
     return (
-        <>
-            {/* <HomePage superheroes={superheroes()} /> */}
-            <Router />
-        </>
+        <div class={css.root}>
+            <Navbar />
+            <div class={css.content_wrapper}>
+                <Router />
+            </div>
+        </div>
     );
 }
 

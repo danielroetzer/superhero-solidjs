@@ -1,0 +1,10 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.content_wrapper {
+    margin-left: var(--navbar-width);
+    padding: 20px;
+}

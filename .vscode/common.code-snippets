@@ -1,0 +1,74 @@
+{
+    "consoleLog": {
+        "scope": "javascript",
+        "prefix": "cl",
+        "body": [
+            "console.log($1)"
+        ],
+        "description": "Console.log"
+    },
+    "commentHeaderAll": {
+        "scope": "javascript",
+        "prefix": "*A",
+        "body": [
+            "/** EXTERNALS **/",
+            "",
+            "",
+            "/** LOCALS **/",
+            "",
+            "",
+            "/** HELPERS **/",
+            "",
+            "",
+            "/** MAIN **/",
+            "",
+            "",
+            "$1"
+        ],
+        "description": "Comment Header: All"
+    },
+    "commentHeaderExternals": {
+        "scope": "javascript",
+        "prefix": "*E",
+        "body": [
+            "/** EXTERNALS **/",
+            "",
+            "",
+            "$1"
+        ],
+        "description": "Comment Header: Externals"
+    },
+    "commentHeaderLocals": {
+        "scope": "javascript",
+        "prefix": "*L",
+        "body": [
+            "/** LOCALS **/",
+            "",
+            "",
+            "$1"
+        ],
+        "description": "Comment Header: Locals"
+    },
+    "commentHeaderHelpers": {
+        "scope": "javascript",
+        "prefix": "*H",
+        "body": [
+            "/** HELPERS **/",
+            "",
+            "",
+            "$1"
+        ],
+        "description": "Comment Header: Helpers"
+    },
+    "commentHeaderMain": {
+        "scope": "javascript",
+        "prefix": "*M",
+        "body": [
+            "/** MAIN **/",
+            "",
+            "",
+            "$1",
+        ],
+        "description": "Comment Header: Main"
+    },
+}

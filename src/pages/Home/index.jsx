@@ -9,7 +9,7 @@ import { For, createResource } from "solid-js";
 
 import css from './Home.module.css';
 import SuperheroCard from '@/components/SuperheroCard';
-import fetchSuperheroes from '@/API/fetch/superheroes';
+import fetchSuperheroes from '@/api/fetch/superheroes';
 
 
 /** HELPERS **/

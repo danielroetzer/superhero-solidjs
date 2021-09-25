@@ -9,7 +9,7 @@ import { slice } from 'rambda';
 
 
 import SuperheroCard from '@/components/SuperheroCard';
-import fetchSuperheroes from '@/API/fetch/superheroes';
+import fetchSuperheroes from '@/api/fetch/superheroes';
 
 
 /** HELPERS **/

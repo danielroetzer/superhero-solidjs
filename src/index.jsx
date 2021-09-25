@@ -1,6 +1,30 @@
+/** EXTERNALS **/
+
+
 import { render } from "solid-js/web";
+import { Router } from "solid-app-router";
+
+
+/** LOCALS **/
+
 
 import "./index.css";
 import App from "./App";
 
-render(App, document.getElementById("root"));
+
+/** HELPERS **/
+
+
+const RouterWrapper = function() {
+    return (
+        <Router>
+            <App />
+        </Router>
+    );
+};
+
+
+/** MAIN **/
+
+
+render(RouterWrapper, document.getElementById("root"));

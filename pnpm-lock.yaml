@@ -1,11 +1,15 @@
 lockfileVersion: 5.3
 
 specifiers:
+  rambda: ^6.9.0
+  solid-app-router: ^0.1.7
   solid-js: ^1.1.1
   vite: ^2.5.1
   vite-plugin-solid: ^2.0.3
 
 dependencies:
+  rambda: 6.9.0
+  solid-app-router: 0.1.7_solid-js@1.1.1
   solid-js: 1.1.1
 
 devDependencies:
@@ -505,6 +509,10 @@ packages:
       source-map-js: 0.6.2
     dev: true
 
+  /rambda/6.9.0:
+    resolution: {integrity: sha512-yosVdGg1hNGkXPzqGiOYNEpXKjEOxzUCg2rB0l+NKdyCaSf4z+i5ojbN0IqDSezMMf71YEglI+ZUTgTffn5afw==}
+    dev: false
+
   /resolve/1.20.0:
     resolution: {integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==}
     dependencies:
@@ -528,6 +536,14 @@ packages:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
     dev: true
+
+  /solid-app-router/0.1.7_solid-js@1.1.1:
+    resolution: {integrity: sha512-YWKsYVGdacoP6kclFGpFt+6uWw5gpFgPitTQDZTAsIA1BCb7X+WFsiNvJByaiFOxsVHkJu3jYAAEwU+IaDdsLw==}
+    peerDependencies:
+      solid-js: ^1.0.0
+    dependencies:
+      solid-js: 1.1.1
+    dev: false
 
   /solid-js/1.1.1:
     resolution: {integrity: sha512-BtNNMUjBGtkx4viW5q/oqU4DOHa3WRhylN302cVVIeiBUGw6uzAE+NhNF12bAvSYJOCHLyGHpUEIeWklkeGgsg==}

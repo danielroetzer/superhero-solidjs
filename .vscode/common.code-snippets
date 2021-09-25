@@ -1,6 +1,6 @@
 {
     "consoleLog": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "cl",
         "body": [
             "console.log($1)"
@@ -8,7 +8,7 @@
         "description": "Console.log"
     },
     "commentHeaderAll": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "*A",
         "body": [
             "/** EXTERNALS **/",
@@ -28,7 +28,7 @@
         "description": "Comment Header: All"
     },
     "commentHeaderExternals": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "*E",
         "body": [
             "/** EXTERNALS **/",
@@ -39,7 +39,7 @@
         "description": "Comment Header: Externals"
     },
     "commentHeaderLocals": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "*L",
         "body": [
             "/** LOCALS **/",
@@ -50,7 +50,7 @@
         "description": "Comment Header: Locals"
     },
     "commentHeaderHelpers": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "*H",
         "body": [
             "/** HELPERS **/",
@@ -61,7 +61,7 @@
         "description": "Comment Header: Helpers"
     },
     "commentHeaderMain": {
-        "scope": "javascript",
+        "scope": "javascript, javascriptreact",
         "prefix": "*M",
         "body": [
             "/** MAIN **/",

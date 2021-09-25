@@ -2,7 +2,7 @@
 
 
 import { createMemo, createResource } from 'solid-js';
-import { slice } from 'rambda';
+import { map, pipe, sort, sum, take, takeLast, values } from 'rambda';
 
 
 /** LOCALS **/
@@ -15,21 +15,66 @@ import fetchSuperheroes from '@/api/fetch/superheroes';
 /** HELPERS **/
 
 
+const sumPowerstats = function(superheroes) {
+    const powerstatsSum = pipe(
+        values,
+        sum
+    )(superheroes.powerstats);
+
+    return {
+        ...superheroes,
+        powerstatsSum,
+    };
+}
+
+const sortByPowerstatsDSC = function(superheroes = []) {
+    return pipe(
+        map(sumPowerstats),
+        sort((heroA, heroB) => heroB.powerstatsSum - heroA.powerstatsSum),
+    )(superheroes);
+};
+
+
 /** MAIN **/
 
 
 const Tierlist = function() {
     const [superheroes] = createResource(fetchSuperheroes);
 
-    // const top10 = slice(0, 10, superheroes() ?? []);
-    const top10 = createMemo(function() {
-        return slice(0, 10, superheroes() ?? []);
+    const sortedHeroes = createMemo(function() {
+        const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes());
+
+        return {
+            top10Heroes: take(10, sortedByPowerstatsDSC),
+            worst10Heroes: takeLast(10, sortedByPowerstatsDSC),
+        };
     });
 
     return (
         <div>
-            <For each={top10()} fallback={<div>Loading...</div>}>
+            Top10:
+            <For each={sortedHeroes().top10Heroes} fallback={<div>Loading...</div>}>
                 {function(superhero) {
+                    console.log(superhero.powerstatsSum);
+
+                    return (
+                        <SuperheroCard
+                            name={superhero.name}
+                            img={{
+                                src: superhero.images.xs,
+                                alt: superhero.name,
+                            }}
+                        />
+                    )
+                }}
+            </For>
+
+            Worst10:
+
+            <For each={sortedHeroes().worst10Heroes} fallback={<div>Loading...</div>}>
+                {function(superhero) {
+                    console.log(superhero.powerstatsSum);
+
                     return (
                         <SuperheroCard
                             name={superhero.name}

@@ -1,7 +1,7 @@
 /** EXTERNALS **/
 
 
-import { Show, splitProps } from 'solid-js';
+import { Show, onCleanup, onMount, splitProps } from 'solid-js';
 import { Portal } from 'solid-js/web';
 
 
@@ -10,6 +10,7 @@ import { Portal } from 'solid-js/web';
 
 import { closeDialog } from '@/stores/Dialog';
 import css from './Dialog.module.css';
+import { createEffect } from 'solid-js';
 
 
 /** HELPERS **/

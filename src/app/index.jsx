@@ -36,7 +36,7 @@ function App() {
     return (
         <div class={css.root}>
             <Navbar />
-            <div class={css.content_wrapper}>
+            <div class={css.content_wrapper} id="content_wrapper">
                 <Router />
             </div>
         </div>

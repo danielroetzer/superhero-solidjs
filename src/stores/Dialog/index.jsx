@@ -17,4 +17,21 @@ const initialValue = null
 
 
 export const [dialogId, setDialogId] = createSignal(initialValue);
-export const closeDialog = () => setDialogId(null);
+
+export const openDialog = function(id) {
+    const contentWrapper = document.getElementById('content_wrapper');
+    contentWrapper.style.top = `-${scrollY}px`;
+    contentWrapper.style.position = 'fixed';
+
+    setDialogId(id);
+};
+
+export const closeDialog = function() {
+    const contentWrapper = document.getElementById('content_wrapper');
+    const scrollY = contentWrapper.style.top;
+    contentWrapper.style.position = '';
+    contentWrapper.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+    setDialogId(null);
+};

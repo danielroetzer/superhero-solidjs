@@ -14,8 +14,6 @@ const initialValue = localStorage.getItem('superheroes')
     ? JSON.parse(localStorage.getItem('superheroes'))
     : [];
 
-console.log(initialValue);
-
 
 /** MAIN **/
 

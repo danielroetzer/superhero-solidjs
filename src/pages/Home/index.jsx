@@ -7,6 +7,7 @@ import { For } from "solid-js";
 /** LOCALS **/
 
 
+import SuperheroDialog from '@/containers/Dialog/Superhero';
 import { superheroes } from '@/stores/Superheroes';
 import css from './Home.module.css';
 import SuperheroCard from '@/components/SuperheroCard';
@@ -35,6 +36,8 @@ const Home = function() {
                     )
                 }}
             </For>
+
+            <SuperheroDialog />
         </div>
     );
 };

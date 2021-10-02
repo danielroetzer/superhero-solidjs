@@ -41,7 +41,6 @@ const sortByPowerstatsDSC = function(superheroes = []) {
 
 const Tierlist = function() {
     const sortedHeroes = createMemo(function() {
-        console.log(superheroes())
         const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes() ?? []);
 
         return {
@@ -55,8 +54,6 @@ const Tierlist = function() {
             Top10:
             <For each={sortedHeroes().top10Heroes} fallback={<div>Loading...</div>}>
                 {function(superhero) {
-                    console.log(superhero.powerstatsSum);
-
                     return (
                         <SuperheroCard
                             id={superhero.id}
@@ -74,8 +71,6 @@ const Tierlist = function() {
 
             <For each={sortedHeroes().worst10Heroes} fallback={<div>Loading...</div>}>
                 {function(superhero) {
-                    console.log(superhero.powerstatsSum);
-
                     return (
                         <SuperheroCard
                             id={superhero.id}

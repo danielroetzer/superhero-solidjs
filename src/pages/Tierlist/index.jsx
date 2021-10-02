@@ -9,7 +9,7 @@ import { map, pipe, sort, sum, take, takeLast, values } from 'rambda';
 
 
 import SuperheroCard from '@/components/SuperheroCard';
-import fetchSuperheroes from '@/api/fetch/superheroes';
+import { superheroes } from '@/stores/Superheroes';
 
 
 /** HELPERS **/
@@ -39,10 +39,16 @@ const sortByPowerstatsDSC = function(superheroes = []) {
 
 
 const Tierlist = function() {
-    const [superheroes] = createResource(fetchSuperheroes);
+    // const [superheroes] = createResource(fetchSuperheroes);
+    // console.log(useSuperheroes);
+    // // createEffect(() => console.log(superheroes));
+    // const [superheroState] = useSuperheroes();
+
+    // console.log(superheroState.superheroes);
 
     const sortedHeroes = createMemo(function() {
-        const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes());
+        console.log(superheroes())
+        const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes() ?? []);
 
         return {
             top10Heroes: take(10, sortedByPowerstatsDSC),

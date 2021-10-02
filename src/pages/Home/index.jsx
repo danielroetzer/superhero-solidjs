@@ -7,9 +7,9 @@ import { For, createResource } from "solid-js";
 /** LOCALS **/
 
 
+import { superheroes } from '@/stores/Superheroes';
 import css from './Home.module.css';
 import SuperheroCard from '@/components/SuperheroCard';
-import fetchSuperheroes from '@/api/fetch/superheroes';
 
 
 /** HELPERS **/
@@ -19,8 +19,6 @@ import fetchSuperheroes from '@/api/fetch/superheroes';
 
 
 const Home = function() {
-    const [superheroes] = createResource(fetchSuperheroes);
-
     return (
         <div class={css.root}>
             <For each={superheroes()} fallback={<div>Loading...</div>}>

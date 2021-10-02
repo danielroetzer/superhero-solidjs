@@ -1,0 +1,17 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(155, 155, 155, 0.7);
+}
+
+.dialog {
+    width: 500px;
+    background-color: white;
+    border-radius: 24px;
+}

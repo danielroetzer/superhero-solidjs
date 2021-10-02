@@ -2,3 +2,7 @@
     border: 1px solid gray;
     border-radius: 6px;
 }
+
+.root:hover {
+    cursor: pointer;
+}

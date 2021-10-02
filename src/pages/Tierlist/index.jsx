@@ -1,7 +1,7 @@
 /** EXTERNALS **/
 
 
-import { createMemo, createResource } from 'solid-js';
+import { createMemo } from 'solid-js';
 import { map, pipe, sort, sum, take, takeLast, values } from 'rambda';
 
 
@@ -9,6 +9,7 @@ import { map, pipe, sort, sum, take, takeLast, values } from 'rambda';
 
 
 import SuperheroCard from '@/components/SuperheroCard';
+import SuperheroDialog from '@/containers/Dialog/Superhero';
 import { superheroes } from '@/stores/Superheroes';
 
 
@@ -39,13 +40,6 @@ const sortByPowerstatsDSC = function(superheroes = []) {
 
 
 const Tierlist = function() {
-    // const [superheroes] = createResource(fetchSuperheroes);
-    // console.log(useSuperheroes);
-    // // createEffect(() => console.log(superheroes));
-    // const [superheroState] = useSuperheroes();
-
-    // console.log(superheroState.superheroes);
-
     const sortedHeroes = createMemo(function() {
         console.log(superheroes())
         const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes() ?? []);
@@ -65,6 +59,7 @@ const Tierlist = function() {
 
                     return (
                         <SuperheroCard
+                            id={superhero.id}
                             name={superhero.name}
                             img={{
                                 src: superhero.images.xs,
@@ -83,6 +78,7 @@ const Tierlist = function() {
 
                     return (
                         <SuperheroCard
+                            id={superhero.id}
                             name={superhero.name}
                             img={{
                                 src: superhero.images.xs,
@@ -92,6 +88,8 @@ const Tierlist = function() {
                     )
                 }}
             </For>
+
+            <SuperheroDialog />
         </div>
     );
 };

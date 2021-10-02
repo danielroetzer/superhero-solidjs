@@ -1,7 +1,7 @@
 /** EXTERNALS **/
 
 
-import { For, createResource } from "solid-js";
+import { For } from "solid-js";
 
 
 /** LOCALS **/
@@ -25,6 +25,7 @@ const Home = function() {
                 {function(superhero) {
                     return (
                         <SuperheroCard
+                            id={superhero.id}
                             name={superhero.name}
                             img={{
                                 src: superhero.images.xs,

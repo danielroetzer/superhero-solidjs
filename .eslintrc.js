@@ -14,5 +14,8 @@ module.exports = {
                 balanced: true,
             },
         }],
+        'import/no-extraneous-dependencies': ['error', {
+            devDependencies: ['.eslintrc.js', 'vite.config.js'],
+        }],
     },
 };

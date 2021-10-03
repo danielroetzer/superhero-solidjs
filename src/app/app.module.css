@@ -6,5 +6,6 @@
 
 .content_wrapper {
     margin-left: var(--navbar-width);
+    width: 100%;
     padding: 20px;
 }

@@ -4,11 +4,11 @@
   "description": "Display superhero stats with SolidJS",
   "scripts": {
     "start": "vite",
-    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint . --ext .js --ext .jsx --cache",
-    "lint:fix": "eslint . --ext .js --ext .jsx --fix"
+    "lint:fix": "eslint . --ext .js --ext .jsx --fix",
+    "clear": "rm -rf node_modules/ dist/"
   },
   "license": "MIT",
   "devDependencies": {

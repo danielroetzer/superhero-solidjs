@@ -22,9 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      
+
     - name: Install packages
       # Malicious post-install scripts could steal our token, so we disable them.
-    - run: pnpm install --ignore-scripts
+      run: pnpm install --ignore-scripts
     - name: Run ESLint
-    - run: pnpm lint
+      run: pnpm lint

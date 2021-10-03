@@ -5,8 +5,8 @@ import { Routes, Route } from 'solid-app-router';
 
 /** LOCALS **/
 
-const Home = lazy(() => import('@/pages/Home/index.jsx'));
-const Tierlist = lazy(() => import('@/pages/Tierlist/index.jsx'));
+const Home = lazy(() => import('@/pages/Home'));
+const Tierlist = lazy(() => import('@/pages/Tierlist'));
 
 /** HELPERS **/
 

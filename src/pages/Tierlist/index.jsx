@@ -13,23 +13,23 @@ import { superheroes } from '@/stores/Superheroes';
 
 /** HELPERS **/
 
-const sumPowerstats = function (superheroes) {
+const sumPowerstats = function (heroes) {
     const powerstatsSum = pipe(
         values,
         sum,
-    )(superheroes.powerstats);
+    )(heroes.powerstats);
 
     return {
-        ...superheroes,
+        ...heroes,
         powerstatsSum,
     };
 };
 
-const sortByPowerstatsDSC = function (superheroes = []) {
+const sortByPowerstatsDSC = function (heroes = []) {
     return pipe(
         map(sumPowerstats),
         sort((heroA, heroB) => heroB.powerstatsSum - heroA.powerstatsSum),
-    )(superheroes);
+    )(heroes);
 };
 
 /** MAIN **/

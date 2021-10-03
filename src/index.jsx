@@ -12,7 +12,7 @@ import App from '@/app';
 
 const RouterWrapper = function () {
     return (
-        <Router>
+        <Router base="/superhero-solidjs/">
             <App />
         </Router>
     );

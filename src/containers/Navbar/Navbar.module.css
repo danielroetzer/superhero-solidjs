@@ -4,3 +4,11 @@
     background-color: goldenrod;
     position: fixed;
 }
+
+.nav_item {
+    padding: 10px;
+}
+
+.nav_item .active {
+    color: white;
+}

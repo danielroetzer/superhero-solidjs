@@ -22,8 +22,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install packages
+    - name: Cache pnpm modules
+    uses: actions/cache@v2
+    with:
+      path: ~/.pnpm-store
+      key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      restore-keys: |
+        ${{ runner.os }}-
+
+    - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.x
+          run_install: true
+
+    # - name: Install packages
       # Malicious post-install scripts could steal our token, so we disable them.
-      run: pnpm install --ignore-scripts
+      # run: pnpm install --ignore-scripts
     - name: Run ESLint
       run: pnpm lint

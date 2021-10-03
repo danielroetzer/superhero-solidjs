@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint ./ --cache",
-    "lint:fix": "eslint ./ --fix"
+    "lint": "eslint . --ext .js --ext .jsx --cache",
+    "lint:fix": "eslint . --ext .js --ext .jsx --fix"
   },
   "license": "MIT",
   "devDependencies": {

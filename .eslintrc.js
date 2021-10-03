@@ -1,8 +1,21 @@
 module.exports = {
+    env: {
+        browser: true,
+        es2021: true,
+    },
     parserOptions: {
+        ecmaVersion: 12,
         sourceType: 'module',
-        ecmaVersion: 8,
-        allowImportExportEverywhere: true,
+    },
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['@', './src'],
+                ],
+                extensions: ['.jsx', '.js'],
+            },
+        },
     },
     plugins: ['solid'],
     extends: ['eslint:recommended', 'airbnb-base', 'plugin:solid/recommended'],
@@ -17,5 +30,7 @@ module.exports = {
         'import/no-extraneous-dependencies': ['error', {
             devDependencies: ['.eslintrc.js', 'vite.config.js'],
         }],
+        'prefer-arrow-callback': 0,
+        'func-names': 0,
     },
 };

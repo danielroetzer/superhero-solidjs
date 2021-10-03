@@ -1,34 +1,30 @@
 /** EXTERNALS **/
 
-
-import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
-const path = require('path');
-
+import path from 'path';
+import { defineConfig } from 'vite';
+import solidPlugin from 'vite-plugin-solid';
+import eslintPlugin from 'vite-plugin-eslint';
 
 /** LOCALS **/
-
 
 /** HELPERS **/
 
 const alias = [
     {
         find: '@',
-        replacement: path.resolve(__dirname, './src')
+        replacement: path.resolve(__dirname, './src'),
     },
 ];
 
-
 /** MAIN **/
 
-
 export default defineConfig({
-    plugins: [solidPlugin()],
+    plugins: [solidPlugin(), eslintPlugin()],
     build: {
-        target: "esnext",
+        target: 'esnext',
         polyfillDynamicImport: false,
     },
-    resolve:{
+    resolve: {
         alias,
     },
 });

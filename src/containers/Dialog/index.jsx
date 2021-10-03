@@ -1,26 +1,19 @@
 /** EXTERNALS **/
 
-
-import { Show, onCleanup, onMount, splitProps } from 'solid-js';
+import { Show, splitProps } from 'solid-js';
 import { Portal } from 'solid-js/web';
-
 
 /** LOCALS **/
 
-
 import { closeDialog } from '@/stores/Dialog';
 import css from './Dialog.module.css';
-import { createEffect } from 'solid-js';
-
 
 /** HELPERS **/
 
-
 /** MAIN **/
 
-
-const Dialog = function(props) {
-    const [local, others] = splitProps(props, ["children"]);
+const Dialog = function (props) {
+    const [local, others] = splitProps(props, ['children']);
 
     return (
         <Show when={others.isOpen}>

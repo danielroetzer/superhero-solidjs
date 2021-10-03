@@ -1,46 +1,41 @@
 /** EXTERNALS **/
 
-
-import { createMemo } from 'solid-js';
-import { map, pipe, sort, sum, take, takeLast, values } from 'rambda';
-
+import { createMemo, For } from 'solid-js';
+import {
+    map, pipe, sort, sum, take, takeLast, values,
+} from 'rambda';
 
 /** LOCALS **/
-
 
 import SuperheroCard from '@/components/SuperheroCard';
 import SuperheroDialog from '@/containers/Dialog/Superhero';
 import { superheroes } from '@/stores/Superheroes';
 
-
 /** HELPERS **/
 
-
-const sumPowerstats = function(superheroes) {
+const sumPowerstats = function (heroes) {
     const powerstatsSum = pipe(
         values,
-        sum
-    )(superheroes.powerstats);
+        sum,
+    )(heroes.powerstats);
 
     return {
-        ...superheroes,
+        ...heroes,
         powerstatsSum,
     };
-}
+};
 
-const sortByPowerstatsDSC = function(superheroes = []) {
+const sortByPowerstatsDSC = function (heroes = []) {
     return pipe(
         map(sumPowerstats),
         sort((heroA, heroB) => heroB.powerstatsSum - heroA.powerstatsSum),
-    )(superheroes);
+    )(heroes);
 };
-
 
 /** MAIN **/
 
-
-const Tierlist = function() {
-    const sortedHeroes = createMemo(function() {
+const Tierlist = function () {
+    const sortedHeroes = createMemo(function () {
         const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes() ?? []);
 
         return {
@@ -53,7 +48,7 @@ const Tierlist = function() {
         <div>
             Top10:
             <For each={sortedHeroes().top10Heroes} fallback={<div>Loading...</div>}>
-                {function(superhero) {
+                {function (superhero) {
                     return (
                         <SuperheroCard
                             id={superhero.id}
@@ -63,14 +58,14 @@ const Tierlist = function() {
                                 alt: superhero.name,
                             }}
                         />
-                    )
+                    );
                 }}
             </For>
 
             Worst10:
 
             <For each={sortedHeroes().worst10Heroes} fallback={<div>Loading...</div>}>
-                {function(superhero) {
+                {function (superhero) {
                     return (
                         <SuperheroCard
                             id={superhero.id}
@@ -80,7 +75,7 @@ const Tierlist = function() {
                                 alt: superhero.name,
                             }}
                         />
-                    )
+                    );
                 }}
             </For>
 

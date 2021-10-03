@@ -1,0 +1,16 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.vscode": true,
+    ".github/**": true
+  },
+  "editor.rulers": [120],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  }
+}

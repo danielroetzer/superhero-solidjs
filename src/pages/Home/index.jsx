@@ -1,29 +1,23 @@
 /** EXTERNALS **/
 
-
-import { For } from "solid-js";
-
+import { For } from 'solid-js';
 
 /** LOCALS **/
-
 
 import SuperheroDialog from '@/containers/Dialog/Superhero';
 import { superheroes } from '@/stores/Superheroes';
 import css from './Home.module.css';
 import SuperheroCard from '@/components/SuperheroCard';
 
-
 /** HELPERS **/
-
 
 /** MAIN **/
 
-
-const Home = function() {
+const Home = function () {
     return (
         <div class={css.root}>
             <For each={superheroes()} fallback={<div>Loading...</div>}>
-                {function(superhero) {
+                {function (superhero) {
                     return (
                         <SuperheroCard
                             id={superhero.id}
@@ -33,7 +27,7 @@ const Home = function() {
                                 alt: superhero.name,
                             }}
                         />
-                    )
+                    );
                 }}
             </For>
 

@@ -1,1 +1,0 @@
-import{g as e}from"./vendor.86289d7c.js";const s=localStorage.getItem("superheroes")?JSON.parse(localStorage.getItem("superheroes")):[],[o,r]=e(s),a=e=>o().find((s=>s.id===e));export{r as a,a as g,o as s};

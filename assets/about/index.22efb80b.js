@@ -1,1 +1,0 @@
-import{t,b as o}from"../vendor.86289d7c.js";var s="_root_121i4_1";const e=t("<div>GitHub: https://github.com/daniel-meisterlabs/superhero-solidjs</div>",2),r=function(){return(()=>{const t=e.cloneNode(!0);return o((()=>t.className=s)),t})()};export{r as default};

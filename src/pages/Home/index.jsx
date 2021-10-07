@@ -1,6 +1,6 @@
 /** EXTERNALS **/
 
-import { For } from 'solid-js';
+import { For, onMount } from 'solid-js';
 
 /** LOCALS **/
 
@@ -14,6 +14,10 @@ import SuperheroCard from '@/components/SuperheroCard';
 /** MAIN **/
 
 const Home = function () {
+    onMount(function () {
+        document.title = 'Home | SuperheroAPI with SolidJS';
+    });
+
     return (
         <div class={css.root}>
             <For each={superheroes()} fallback={<div>Loading...</div>}>

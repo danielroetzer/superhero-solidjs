@@ -1,6 +1,6 @@
 /** EXTERNALS **/
 
-import { createMemo, For } from 'solid-js';
+import { For, createMemo, onMount } from 'solid-js';
 import {
     map, pipe, sort, sum, take, takeLast, values,
 } from 'rambda';
@@ -35,6 +35,10 @@ const sortByPowerstatsDSC = function (heroes = []) {
 /** MAIN **/
 
 const Tierlist = function () {
+    onMount(function () {
+        document.title = 'Ranking | SuperheroAPI with SolidJS';
+    });
+
     const sortedHeroes = createMemo(function () {
         const sortedByPowerstatsDSC = sortByPowerstatsDSC(superheroes() ?? []);
 

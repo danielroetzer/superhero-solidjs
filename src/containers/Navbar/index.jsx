@@ -15,7 +15,7 @@ const Navbar = function () {
     return (
         <div class={css.root}>
             <NavLink href="/" end class={css.nav_item}>Home</NavLink>
-            <NavLink href="/tierlist" class={css.nav_item}>Tierlist</NavLink>
+            <NavLink href="/ranking" class={css.nav_item}>Ranking</NavLink>
             <NavLink href="/about" class={css.nav_item}>About</NavLink>
         </div>
     );

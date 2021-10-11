@@ -23,6 +23,13 @@ export default defineConfig({
     build: {
         target: 'esnext',
         polyfillDynamicImport: false,
+        rollupOptions: {
+            input: {
+                index: path.resolve(__dirname, './index.html'),
+                about: path.resolve(__dirname, './about/index.html'),
+                tierlist: path.resolve(__dirname, './ranking/index.html'),
+            },
+        },
     },
     resolve: {
         alias,

@@ -1,14 +1,17 @@
 .root {
     width: var(--navbar-width);
     height: 100%;
-    background-color: goldenrod;
+    background-color: #A84D93;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav_item {
     padding: 10px;
-}
-
-.nav_item .active {
-    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
 }

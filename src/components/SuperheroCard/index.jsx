@@ -12,8 +12,8 @@ import css from './SuperheroCard.module.css';
 const SuperheroCard = function (props) {
     return (
         <div class={css.root} onClick={() => openDialog(props.id)}>
-            <img src={props.img.src} alt={props.img.alt} />
-            <p>
+            <img src={props.img.src} alt={props.img.alt} loading="lazy" />
+            <p class={css.name}>
                 {props.name}
             </p>
         </div>

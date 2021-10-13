@@ -1,15 +1,16 @@
 /** EXTERNALS **/
 
-import { For, createMemo, onMount } from 'solid-js';
+import { createMemo, onMount } from 'solid-js';
 import {
     map, pipe, sort, sum, take, takeLast, values,
 } from 'rambda';
 
 /** LOCALS **/
 
-import SuperheroCard from '@/components/SuperheroCard';
+import SuperheroCards from '@/components/SuperheroCards';
 import SuperheroDialog from '@/containers/Dialog/Superhero';
 import { superheroes } from '@/stores/Superheroes';
+import css from './Ranking.module.css';
 
 /** HELPERS **/
 
@@ -50,38 +51,17 @@ const Tierlist = function () {
 
     return (
         <div>
-            Top10:
-            <For each={sortedHeroes().top10Heroes} fallback={<div>Loading...</div>}>
-                {function (superhero) {
-                    return (
-                        <SuperheroCard
-                            id={superhero.id}
-                            name={superhero.name}
-                            img={{
-                                src: superhero.images.xs,
-                                alt: superhero.name,
-                            }}
-                        />
-                    );
-                }}
-            </For>
+            <h2>Best 10</h2>
 
-            Worst10:
+            <div class={css.superheroes}>
+                <SuperheroCards superheroes={sortedHeroes().top10Heroes} />
+            </div>
 
-            <For each={sortedHeroes().worst10Heroes} fallback={<div>Loading...</div>}>
-                {function (superhero) {
-                    return (
-                        <SuperheroCard
-                            id={superhero.id}
-                            name={superhero.name}
-                            img={{
-                                src: superhero.images.xs,
-                                alt: superhero.name,
-                            }}
-                        />
-                    );
-                }}
-            </For>
+            <h2>Worst 10</h2>
+
+            <div class={css.superheroes}>
+                <SuperheroCards superheroes={sortedHeroes().worst10Heroes} />
+            </div>
 
             <SuperheroDialog />
         </div>

@@ -6,6 +6,7 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "deploy:pages": "vite build --mode ghpages && scripts/gh-pages/deploy.sh",
     "lint": "eslint . --ext .js --ext .jsx --cache",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix",
     "clear": "rm -rf node_modules/ dist/"
@@ -24,6 +25,7 @@
   "dependencies": {
     "rambda": "^6.9.0",
     "solid-app-router": "^0.1.7",
-    "solid-js": "^1.1.1"
+    "solid-js": "^1.1.1",
+    "vite-plugin-mpa": "^1.1.0"
   }
 }

@@ -14,11 +14,13 @@ const About = lazy(() => import('@/pages/About'));
 /** MAIN **/
 
 export default function () {
+    const basePath = import.meta.env.BASE_URL;
+
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tierlist" element={<Tierlist />} />
-            <Route path="/about" element={<About />} />
+            <Route path={`${basePath}`} element={<Home />} />
+            <Route path={`${basePath}tierlist`} element={<Tierlist />} />
+            <Route path={`${basePath}about`} element={<About />} />
         </Routes>
     );
 }
